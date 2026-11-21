@@ -29,7 +29,7 @@
     <p>本ポリシーは、Tomoki Ashizawa が提供する各アプリ（副業収支トラッカー／酒ノート／受験ダンドリ／モヤすて／BACK30／ドパラン 等、以下「本アプリ」）に共通して適用されます。</p>
 
     <h2>収集する情報</h2>
-    <p>アカウント登録は不要です。BACK30以外の本アプリは、利用者の個人情報を収集せず、外部サーバーとの通信も行いません（ドパランの地図表示と、利用者が任意で行うドパランのサインインを除きます。下の「ドパランについて」をご覧ください）。BACK30の無料版は広告表示のためGoogle Mobile Ads SDKを使用します。</p>
+    <p>アカウント登録は不要です。BACK30以外の本アプリは、利用者の個人情報を収集せず、外部サーバーとの通信も行いません（ドパランの地図表示、追加の曲のダウンロード、利用者が任意で行うドパランのサインインを除きます。下の「ドパランについて」をご覧ください）。BACK30の無料版は広告表示のためGoogle Mobile Ads SDKを使用します。</p>
 
     <h2>データの保存</h2>
     <p>利用者が入力または作成したデータは、すべて利用者の端末内にのみ保存されます。BACK30では、利用者がiOSの画面収録を明示的に開始している間だけ、画面映像とゲーム音を端末内で循環処理し、利用者が保存を指示したクリップのみを保持します。マイク音声は取得しません。開発者を含む第三者がこれらのデータにアクセスすることはできません。</p>
@@ -52,6 +52,7 @@
     <p><strong>ウィジェットとロック画面</strong>：ホーム画面のウィジェットと走行中のロック画面の表示には、端末内の記録（距離、時間、相棒など）を使います。ルートや位置は表示しません。</p>
     <p><strong>共有</strong>：利用者が共有を操作したときだけ、距離や時間などを載せた画像と文章を、利用者が選んだ共有先へ渡します。この画像と文章にルートや位置情報は含まれません。</p>
     <p><strong>アカウント（任意）</strong>：利用者が「Appleでサインイン」または「Googleでサインイン」を選んだ場合に限り、機種変更や複数の端末で記録を引き継ぐため、次の情報をGoogleのFirebase（Firebase Authentication と Cloud Firestore、東京リージョン）に保存します：サインインに使ったアカウントのメールアドレスと利用者ID、ランの日時・距離・時間・歩調・曲・集めた音・相棒、ポイントと解放した相棒、ミッションの受け取り記録、アプリを開いた日。走ったルート（位置情報）と景色の画像は送信しません。保存したデータは、本人の端末から本人のサインインによってのみ読み書きでき、広告や第三者への提供には使いません。Appleでサインインする際にメールアドレスを非公開にした場合は、Appleが発行する中継用のアドレスが保存されます。Firebaseの取り扱いは<a href="https://firebase.google.com/support/privacy">Firebaseのプライバシーとセキュリティ</a>をご覧ください。サインインしない場合、これらの情報が送信されることはありません。</p>
+    <p><strong>曲のダウンロード</strong>：最初の3曲はアプリに入っています。ほかの曲は、利用者がダウンロードを選んだときに限り、GitHub（GitHub, Inc.）のサーバーから取得します。このとき、通常のインターネット通信と同じく、IPアドレスなどの接続情報がGitHubに届きます。ドパランから個人情報やランの記録を送ることはありません。GitHubの取り扱いは<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーステートメント</a>をご覧ください。</p>
     <p><strong>削除</strong>：ランの記録は、計測履歴でランを開き「この記録を消す」から1件ずつ削除できます。アプリを削除すると、端末内の記録はすべて削除されます。サインインした場合は、アプリのプロフィール →「アカウント」→「アカウントを削除」で、サーバーに保存したデータとアカウントを削除できます（端末内のデータは残ります）。ヘルスケアに保存したワークアウトは、Appleのヘルスケアアプリから削除できます。</p>
 
     <h2>お問い合わせ</h2>
@@ -62,7 +63,7 @@
     <h1 style="font-size:1.3rem">Privacy Policy (English)</h1>
     <p>This policy applies to all apps provided by Tomoki Ashizawa (SideLedger, SakeNote, JukenPlan, MoyaSute, BACK30, DopaRun, etc.; the “Apps”).</p>
     <h2>Information We Collect</h2>
-    <p>No account is required. Apps other than BACK30 do not collect personal information or communicate with an external server (except the map display in DopaRun and DopaRun’s optional sign-in; see “About DopaRun” below). The free version of BACK30 uses the Google Mobile Ads SDK to display ads.</p>
+    <p>No account is required. Apps other than BACK30 do not collect personal information or communicate with an external server (except the map display in DopaRun, downloads of additional DopaRun songs, and DopaRun’s optional sign-in; see “About DopaRun” below). The free version of BACK30 uses the Google Mobile Ads SDK to display ads.</p>
     <h2>Data Storage</h2>
     <p>All data you enter or create is stored only on your device. In BACK30, screen video and game audio are processed in a rolling on-device buffer only while you explicitly run an iOS screen broadcast. Only clips you choose to save are retained. Microphone audio is not captured. No third party, including the developer, can access this data.</p>
     <h2>Data Sharing</h2>
@@ -80,6 +81,7 @@
     <p><strong>Widget and Lock Screen</strong>: the Home Screen widget and the Lock Screen display during a run use records on your device (distance, time, your buddy and so on). They do not show your route or location.</p>
     <p><strong>Sharing</strong>: only when you use the share action, an image and text with figures such as distance and time are passed to the destination you choose. They do not contain your route or location.</p>
     <p><strong>Account (optional)</strong>: only if you choose “Sign in with Apple” or “Sign in with Google”, the following is stored with Google Firebase (Firebase Authentication and Cloud Firestore, Tokyo region) so your records carry over to a new or second device: the email address and user ID of the account you signed in with; the date, distance, duration, cadence, track, sounds collected and buddy of each run; your points and unlocked buddies; mission reward records; and the days you opened the app. Your routes (location) and scenery pictures are never sent. The stored data can be read and written only by you, signed in on your device, and is not used for advertising or provided to third parties. If you hide your email when signing in with Apple, the relay address Apple issues is stored. See <a href="https://firebase.google.com/support/privacy">Firebase Privacy and Security</a> for how Firebase handles data. If you do not sign in, none of this is sent.</p>
+    <p><strong>Song downloads</strong>: the first three songs come with the app. Other songs are fetched from GitHub (GitHub, Inc.) servers only when you choose to download them. As with any internet connection, connection information such as your IP address reaches GitHub. DopaRun sends no personal information or run records. See the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a> for how GitHub handles data.</p>
     <p><strong>Deletion</strong>: you can delete a run one at a time by opening it in History and choosing “Delete this run”. Deleting the app deletes all records stored on your device. If you signed in, Profile → Account → Delete account deletes the data stored on the server and the account itself (the data on your device stays). Workouts saved to Health can be deleted in Apple’s Health app.</p>
 
     <h2>Contact</h2>

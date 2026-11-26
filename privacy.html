@@ -69,6 +69,20 @@
     <p><strong>広告</strong>：ホームと結果の画面に、開発者の別サービス（PhysDraft）の案内を表示します。案内を表示するために情報を送ることはありません。</p>
     <p><strong>削除</strong>：プロフィール画面の「アカウントを削除」で、サーバーに保存したプロフィールと対戦の記録をすべて削除できます（元に戻せません。端末内の練習の記録は残ります）。アプリを削除すると、端末内の記録も削除されます。</p>
 
+    <h2 id="kagakubattle">化学バトルについて</h2>
+    <p>化学バトル（iOSアプリと、Web版 kagaku-battle.buchi-development.workers.dev）は、対戦とランキングのために次の情報を開発者のサーバー（Cloudflare Workers と D1）に保存します。広告や解析のSDKは使用していません。</p>
+    <p><strong>プロフィール（任意）</strong>：ニックネーム、学年、都道府県、学校名。プロフィールを作った場合だけ保存します。ニックネーム・学年・学校名・都道府県は、ランキングや対戦相手の表示でほかの利用者に見えます。本名・メールアドレス・電話番号は求めません。よくない言葉を含む名前は登録できません。</p>
+    <p><strong>利用者ID</strong>：プロフィールを作るとサーバーが発行するIDと、本人確認用の文字列（サーバーにはハッシュだけを保存）。本人確認用の文字列は端末内に保存されます。</p>
+    <p><strong>対戦の記録</strong>：レート、勝敗、解いた問題と答え・答えるまでの時間、昇級試験の級、週リーグの点、今日の10問の点。対戦の記録は、近いレートのほかの利用者の対戦相手（ゴースト）として、ニックネームとともに使われます。</p>
+    <p><strong>問題ごとの正解率</strong>：答え合わせで「みんなの正解率」を出すために、どの問題に正解したかどうかだけを送ります。ゲストで遊ぶ場合も送りますが、利用者IDやプロフィールとは結びつけず、問題ごとの回数として数えるだけです。</p>
+    <p><strong>利用状況の集計</strong>：利用者の数と、どこから来たかを知るために、画面を開いたことと主な操作（対戦の開始、化学力測定の完了、部屋の作成、プロフィールの作成、カードの共有）を、日付・リンク元のサイト名・端末の種類（スマートフォン／タブレット／パソコン）・端末ごとに作る乱数のIDとともに記録します。ニックネームや学校名などのプロフィール、利用者IDとは結びつけず、数として集計するだけです。</p>
+    <p><strong>フレンドバトル</strong>：部屋の番号、ニックネーム、対戦中の答えを、同じ部屋の相手の端末に中継します。部屋は最長3時間で消え、記録は残しません。</p>
+    <p><strong>通報とブロック</strong>：ほかの利用者の名前や学校名を通報すると、通報された名前・学校名と、通報した人を区別するための情報（プロフィールがあれば利用者ID、なければ接続元を変換した値）を保存します。開発者が内容を確認して対応し、同じ相手への通報が一定数集まると名前と学校名を伏せます。ブロックした相手の一覧は端末内にだけ保存されます。</p>
+    <p><strong>カードの共有</strong>：化学力カードを共有すると、カードの数値を入れたリンクを作ります。リンクにニックネームなどの個人情報は入りません。</p>
+    <p><strong>通知</strong>：週リーグの締め切りなどのお知らせは、端末内で予定される通知だけを使います。</p>
+    <p>サーバーとの通信では、通常のインターネット通信と同じく、IPアドレスなどの接続情報が Cloudflare に届きます。ゲストで遊ぶ場合、上の「問題ごとの正解率」「利用状況の集計」「通報」を除き、対戦の記録はサーバーに送られず端末内にだけ保存されます。</p>
+    <p><strong>削除</strong>：プロフィール画面の「アカウントを削除」で、サーバーに保存したプロフィールと対戦の記録をすべて削除できます（元に戻せません。端末内の練習の記録は残ります）。アプリを削除すると、端末内の記録も削除されます。</p>
+
     <h2>お問い合わせ</h2>
     <p>本ポリシーに関するご質問は <a href="mailto:serizawatomoki0589@gmail.com">serizawatomoki0589@gmail.com</a> までご連絡ください。</p>
   </div>
@@ -110,6 +124,20 @@
     <p><strong>Notifications</strong>: reminders such as the weekly league deadline use only notifications scheduled on your device.</p>
     <p>As with any internet connection, connection information such as your IP address reaches Cloudflare. When you play as a guest, match records are not sent to the server and stay on your device, except for the per-question correct rates and reports described above.</p>
     <p><strong>Advertising</strong>: the home and result screens show a notice for the developer's other service (PhysDraft). No information is sent to show it.</p>
+    <p><strong>Deletion</strong>: “アカウントを削除” (Delete account) on the profile screen deletes your profile and all match records stored on the server. This cannot be undone; practice records on your device remain. Deleting the app deletes the records on your device.</p>
+
+    <h2 id="kagakubattle-en">About Kagaku Battle (化学バトル)</h2>
+    <p>Kagaku Battle (the iOS app and the web version at kagaku-battle.buchi-development.workers.dev) stores the following on the developer's server (Cloudflare Workers and D1) for matches and rankings. The app contains no advertising or analytics SDK.</p>
+    <p><strong>Profile (optional)</strong>: nickname, school year, prefecture and school name, stored only if you create a profile. Nickname, school year, school name and prefecture are shown to other users in rankings and as an opponent. Real names, email addresses and phone numbers are never requested. Names containing offensive words cannot be registered.</p>
+    <p><strong>User ID</strong>: an ID issued by the server when you create a profile, and a verification string (only its hash is stored on the server). The verification string is kept on your device.</p>
+    <p><strong>Match records</strong>: rating, wins and losses, the questions you answered with your answers and response times, exam rank, weekly league points and daily quiz scores. Match records are replayed, with your nickname, as opponents (ghosts) for other users with a similar rating.</p>
+    <p><strong>Per-question correct rates</strong>: to show how many people answer each question correctly, only whether you answered each question correctly is sent. This is also sent when you play as a guest, but it is not linked to a user ID or profile; it only increases per-question counts.</p>
+    <p><strong>Usage counts</strong>: to know how many people use the service and where they come from, opening a screen and main actions (starting a match, finishing the chemistry test, creating a room, creating a profile, sharing a card) are recorded with the date, the referring site name, the device type (phone, tablet or computer) and a random ID generated per device. This is not linked to your profile or user ID and is only counted.</p>
+    <p><strong>Friend battles</strong>: the room number, nicknames and answers during the match are relayed to the other devices in the same room. Rooms expire within 3 hours and nothing is kept.</p>
+    <p><strong>Reporting and blocking</strong>: when you report another user's name or school name, the reported name and school name are stored with a value that tells reporters apart (your user ID if you have a profile, otherwise a value derived from your connection). The developer reviews reports and acts on them; when enough reports about the same user accumulate, their name and school name are hidden. Your block list is stored only on your device.</p>
+    <p><strong>Sharing a card</strong>: sharing your chemistry card creates a link containing the card's numbers. The link contains no nickname or other personal information.</p>
+    <p><strong>Notifications</strong>: reminders such as the weekly league deadline use only notifications scheduled on your device.</p>
+    <p>As with any internet connection, connection information such as your IP address reaches Cloudflare. When you play as a guest, match records are not sent to the server and stay on your device, except for the per-question correct rates, usage counts and reports described above.</p>
     <p><strong>Deletion</strong>: “アカウントを削除” (Delete account) on the profile screen deletes your profile and all match records stored on the server. This cannot be undone; practice records on your device remain. Deleting the app deletes the records on your device.</p>
 
     <h2>Contact</h2>
